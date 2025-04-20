@@ -5,7 +5,7 @@ import org.wso2.carbon.identity.governance.IdentityGovernanceService;
 
 public class CustomAccountServiceDataHolder {
 
-    private static volatile CustomAccountServiceDataHolder customAccountServiceDataHolder = new CustomAccountServiceDataHolder();
+    private static final CustomAccountServiceDataHolder customAccountServiceDataHolder = new CustomAccountServiceDataHolder();
 
     private BundleContext bundleContext;
     private IdentityGovernanceService identityGovernanceService;

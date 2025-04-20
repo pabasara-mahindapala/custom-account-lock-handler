@@ -200,7 +200,7 @@ public class CustomAccountLockHandler extends AccountLockHandler {
                                                boolean accountLockOnFailedAttemptsEnabled) throws AccountLockException {
 
         log.info("handle post authentication");
-        Map<String, String> claimValues = null;
+        Map<String, String> claimValues;
 
         // Resolve the claim which stores failed attempts depending on the authenticator.
         Map<String, Object> eventProperties = event.getEventProperties();
@@ -218,7 +218,7 @@ public class CustomAccountLockHandler extends AccountLockHandler {
 
         } catch (UserStoreException e) {
             throw new AccountLockException(String.format("Error occurred while retrieving %s , %s , %s , %s, %s " +
-                            "and %s claim values for user domain.", ACCOUNT_UNLOCK_TIME_CLAIM,
+                            "and %s claim values for user domain %s.", ACCOUNT_UNLOCK_TIME_CLAIM,
                     FAILED_LOGIN_LOCKOUT_COUNT_CLAIM, FAILED_LOGIN_ATTEMPTS_CLAIM,
                     ACCOUNT_LOCKED_CLAIM, AccountConstants.ACCOUNT_LOCKED_REASON_CLAIM_URI,
                     failedAttemptsClaim, userStoreDomainName), e);
