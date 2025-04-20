@@ -39,6 +39,7 @@ import static org.wso2.carbon.identity.handler.event.account.lock.constants.Acco
 import static org.wso2.carbon.user.core.UserCoreConstants.ErrorCode.INVALID_CREDENTIAL;
 import static org.wso2.carbon.user.core.UserCoreConstants.ErrorCode.USER_IS_LOCKED;
 import static org.wso2.custom.account.lock.handler.internal.AccountConstants.FAILED_LOGIN_LOCKOUT_COUNT_CLAIM;
+import static org.wso2.custom.account.lock.handler.internal.AccountConstants.FAILED_SMS_OTP_ATTEMPTS_CLAIM;
 
 /**
  * Implementation of custom account lock handler.
@@ -46,7 +47,6 @@ import static org.wso2.custom.account.lock.handler.internal.AccountConstants.FAI
 public class CustomAccountLockHandler extends AccountLockHandler {
 
     private static final Log log = LogFactory.getLog(CustomAccountLockHandler.class);
-    private static final String FAILED_SMS_OTP_ATTEMPTS_CLAIM = "http://wso2.org/claims/identity/failedSmsOtpAttempts";
 
     @Override
     public String getName() {
