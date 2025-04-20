@@ -41,17 +41,12 @@ import static org.wso2.carbon.user.core.UserCoreConstants.ErrorCode.USER_IS_LOCK
 import static org.wso2.custom.account.lock.handler.internal.AccountConstants.FAILED_LOGIN_LOCKOUT_COUNT_CLAIM;
 
 /**
- * Implementation of account lock handler.
+ * Implementation of custom account lock handler.
  */
 public class CustomAccountLockHandler extends AccountLockHandler {
 
-    public static final Log AUDIT_LOG = LogFactory.getLog("AUDIT_LOG");
     private static final Log log = LogFactory.getLog(CustomAccountLockHandler.class);
     private static final String FAILED_SMS_OTP_ATTEMPTS_CLAIM = "http://wso2.org/claims/identity/failedSmsOtpAttempts";
-    ;
-
-    private static ThreadLocal<String> lockedState = new ThreadLocal<>();
-
 
     @Override
     public String getName() {
